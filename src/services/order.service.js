@@ -6,15 +6,23 @@ class Product {
       .populate({
         path: 'products',
         model: 'Product',
-        select: '-createdAt',
+        select: '-createdAt -_id',
         populate: {
           path: 'category',
           model: 'Category',
-          select: '-createdAt -establishment',
+          select: '-createdAt -establishment -_id',
         }
       })
-      .populate('user').select('-createdAt')
-      .populate('establishment').select('-createdAt')
+      .populate({
+        path: 'user',
+        model: 'User',
+        select: '-createdAt'
+      })
+      .populate({
+        path: 'establishment',
+        model: 'Establishment',
+        select: '-createdAt'
+      })
 
     return order
   }

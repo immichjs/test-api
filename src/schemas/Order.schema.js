@@ -3,8 +3,8 @@ const { mongoose } = require('../config/database/mongoose')
 const orderSchema = new mongoose.Schema({
   products: [{
     type: mongoose.Types.ObjectId,
-    ref: 'Product',
     required: true,
+    ref: 'Product'
   }],
   user: {
     type: mongoose.Types.ObjectId,

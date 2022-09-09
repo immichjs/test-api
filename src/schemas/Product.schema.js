@@ -7,11 +7,7 @@ const productSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
-    default: 0.00
-  },
-  quantity: {
-    type: Number,
-    default: 1
+    default: 0.0
   },
   description: {
     type: String,
